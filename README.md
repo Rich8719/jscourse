@@ -1,4 +1,4 @@
-# js-dc-8
+# JS DC 10
 General Assembly JavaScript
 # ![](assets/logo.png) JavaScript Development
 
