@@ -1,4 +1,4 @@
-# js-dc-8
+# JS DC 10
 General Assembly JavaScript
 # ![](assets/logo.png) JavaScript Development
 
@@ -11,7 +11,7 @@ Class will meet Monday and Wednesday on the 8th floor from 6:30 - 9:30pm - https
 
 |   Class   |                                Title                                |    Date     |
 | --------- | ------------------------------------------------------------------- | ----------- |
-| Lesson 01 | [Installfest](https://git.generalassemb.ly/Ramsay/JS-DC-8/tree/master/00-installfest) | October 8th|
+| Lesson 01 | [Installfest](https://git.generalassemb.ly/JSD10/course-materials/tree/master/01-installfest) | October 8th|
 | Lesson 02 | Command Line JS | October 10th |
 | Lesson 03 | Data and Operators| October 15th |
 | Lesson 04 | Control Flow | October 17th |
