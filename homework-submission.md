@@ -1,37 +1,64 @@
 # ONE TIME ONLY
 
-### Fork the JS DC 8 repo
+### Fork the Course Materials repo
 - Follow Instructor on screen
+- Forking will create a new repository under your own username in Github. You'll need to clone this repo to your development machine. This cloned repo will be the repo you work in for the remainder of the course. 
 
-### Remove the origin remote on your local repo
-- `git remote rm origin`
-- `git remote -v` to see there is no origin remaining
+### Create a new directory in Sites and clone the forked repo into it
+```bash
+cd ~/Sites
+mkdir jsdc10
+cd jsdc10
+git clone git@git.generalassemb.ly:<username>/course-materials.git
+```
 
-### Add the forked repo as your new origin remote
-- Follow Instructor to copy the clone URL on github
-- `git remote add origin THE_FORKED_GIT_URL_HERE`
-- `git remote -v` to see the new origin
+### Add the original Course Materials repo as an upstream remote
 
-### Add the original JS DC 8 repo as an upstream remote
-- Follow Instructor to copy the clone URL on github
-- `git remote add upstream THE_ORIGINAL_GIT_URL_HERE`
-- `git remote -v` to see the new upstream
+You'll want to be able to pull in any changes that I make to the Course Materials repository into your own forked repository. We achieve that by make the Course Materials repository an "upstream" repository. 
+
+```bash
+git remote add upstream git@git.generalassemb.ly:JSD10/course-materials.git
+git remote -v
+```
 
 ### Set the `master` branch to track the origin/master branch
-- `git branch -u origin/master`
-
+```bash
+git branch -u origin/master
+```
 
 # EACH HOMEWORK ASSIGNMENT
 
-Do a `git pull upstream master` on the JS DC 8 repo
+From the root directory of your forked repo, in the terminal, pull the upstream changes from the class repo:
+
+```bash
+git pull upstream master
+```
 
 Do your homework in the `homework` folder, typically in a file or folder called `starter`
 
-When finished, save your work
+When finished, save your work, then check your git status:
 
-`git add` and `git commit` your work
+```bash
+git status
+```
 
-`git push` on your master branch to push the code to your forked repo
+Next, stage all the changes:
 
-Go to github.com and submit a Pull Request from the master branch of your forked repo against the master branch of the original JS DC 7 repo
+```bash
+git add .
+```
+
+Next, commit that changes to your local repository:
+
+```bash
+git commit -m "<enter a commit message here>"
+```
+
+Lastly, push those changes to your forked repository in GitHub:
+
+```bash
+git push origin master
+```
+
+Go to github.com and submit a Pull Request from the master branch of your forked repo against the master branch of the original JSDC10 Course Materials repo
 - Please name the PR with *the name of the class folder of the lesson the homework was assigned in*, with the word 'homework' at the end. For example, today's homework is part of the `02-data_and_operators` lesson, so you would name your PR `02-data_and_operators homework`.
