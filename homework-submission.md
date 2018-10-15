@@ -34,6 +34,8 @@ From the root directory of your forked repo, in the terminal, pull the upstream 
 git pull upstream master
 ```
 
+When you pull from upstream, you might get a weird looking screen in your terminal. This is a text-editor called vim, and git is asking you to write a merge message. You don't actually need to do this, because a default message is written for you. Simply type `:x` to exit and save vim. **REMEMBER THIS COMMAND!!!!**
+
 Do your homework in the `homework` folder, typically in a file or folder called `starter`
 
 When finished, save your work, then check your git status:
