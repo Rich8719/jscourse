@@ -13,7 +13,8 @@
  * Use "image1.png", "image2.png", and "image3.png" as the array values.
  */
 
-// Your code here
+let q1 = ['image1.png', 'image2.png', 'image3.png'];
+console.log(q1);
 
 /**
  * Question 2
@@ -21,7 +22,8 @@
  * in variable q2.
  */
 
-// Your code here
+let q2 = q1[0];
+console.log(q2);
 
 /**
  * Question 3
@@ -29,7 +31,8 @@
  * and store it in variable q3
  */
 
-// Your code here
+let q3 = q1.length; //should there be + 1 because it starts at 0?
+console.log(q3);
 
 /**
  * Question 4
@@ -37,7 +40,8 @@
  * in variable q4. Hint: How can we get the number of elements in the array?
  */
 
-// Your code here
+let q4 = q1[q3 -1]; //why -1? Wouldn't that be 2 - 1?
+console.log(q4); 
 
 // ____________________________________________________________________________
 
@@ -54,7 +58,12 @@
  * an array of numbers with values 2, 3, 4, and 5.
  */
 
-// Your code here
+let q5 = [1, 2, 3, 4];
+q5.forEach(function(num) {
+    q5 = num + 1;
+    console.log(q5);
+});
+
 
 /**
  * Question 6
@@ -62,4 +71,4 @@
  * (average = sum of all numbers/number of numbers). Store the average in q6.
  */
 
-// Your code here
+ 
