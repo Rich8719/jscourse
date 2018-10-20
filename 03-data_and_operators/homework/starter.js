@@ -58,12 +58,19 @@ console.log(q4);
  * an array of numbers with values 2, 3, 4, and 5.
  */
 
-let q5 = [1, 2, 3, 4];
-q5.forEach(function(num) {
-    q5 = num + 1;
-    console.log(q5);
-});
+// let q5 = [1, 2, 3, 4];
+// q5 = q5.forEach(function(num) {
+//     q5 = num + 1;
+//     console.log(q5);
+// });
 
+//-----mapping
+let q5 = [1, 2, 3, 4];
+let newArray = q5.map(function (num) {
+    return num + 1;
+})
+
+console.log(newArray);
 
 /**
  * Question 6
@@ -71,4 +78,17 @@ q5.forEach(function(num) {
  * (average = sum of all numbers/number of numbers). Store the average in q6.
  */
 
- 
+let sum = 0;
+let divide = newArray.length;
+for (let i = 0; i < newArray.length; i++) {
+    sum += newArray[i] //+= performs the plus then assigns it to the operator (i) which then loops with the new value.
+}
+
+const q6 = sum / divide;
+console.log(q6);
+
+// q5.forEach(function (num) {
+//     q6 += num[i++];
+//     console.log(q6);
+// });
+//look ar reduce() function
