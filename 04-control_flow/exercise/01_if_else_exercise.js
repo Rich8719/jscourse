@@ -18,3 +18,17 @@ If they are 46, only print "You can run for president."
 */
 
 let age = 35
+
+if (age <= 16) {
+    console.log('You can\'t do much except go to school');
+} else if (age <= 18){
+    console.log('You can vote');
+} else if (age <= 21){
+    console.log('You can drink');
+} else if (age <= 25){
+    console.log('You can rent a car');
+} else if (age <= 35){
+    console.log('You can run for president');
+} else if(age <= 62){
+    console.log('You can collect social security');
+}

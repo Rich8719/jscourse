@@ -12,6 +12,17 @@
 
 // ##### Step 2:
 // Add an `if/else` statement that logs the string `"fizz"` if the value being iterated over is divisible by `3`; otherwise, log out the value.
+for (let num = 1; num <= 100; num++) {
+    if (num % 15 === 0) {
+        console.log('fizzbuzz');
+    } else if (num % 3 === 0){
+        console.log('fizz');
+    } else if (num % 5 ===0){
+        console.log('fizzbuzz');
+    } else {
+        console.log(num);
+    }
+}
 
 // ##### Step 3:
 // Add an `else if` clause that logs the string `"buzz"` if the value being iterated over is divisible by `5`.
