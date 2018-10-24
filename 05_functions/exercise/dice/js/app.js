@@ -16,11 +16,29 @@ Creating a page where every time the user hits the "Roll Dice" button, the scree
 
 */
 
+// let random1 = Math.floor(Math.random()* 6 + 1);//plus 1 is because random does not generate 1, but numbers between 0 and .999*
+// let random2 = Math.floor(Math.random() * 6 + 1);
 
-const button = document.getElementById('roll-dice')
+//we're doing it twice can write function
+function generateRandomNumber(max){
+    return Math.ceil(Math.random() * max) //math ceil rounds up
+}
+
+function updateDice(){
+    let rand1 = generateRandomNumber(6)
+    let rand2 = generateRandomNumber(6)
+
+    die1.classList = `dice dice-${rand1}`
+    //first class is already there and we don't want to overwrite it
+    die2.classList = `dice dice-${rand2}`
+}
+
+// CREATE 6 DIE IN THE HTML AND TRY AND RETURN AN ARRAY FROM THE DOM TO ITTERATE OVER
+
+const button = document.getElementById('roll-dice')//document object availble because we are accessing it in the browser. Wouldn't be available in node. getElementById is a method, takes one argurment "roll dice"
 const die1 = document.getElementById('first-die')
 const die2 = document.getElementById('second-die')
 
-button.addEventListener('click', updateDice)
+button.addEventListener('click', updateDice) //method .addEventListener takes two arguments, one of which is a javascript event type in this case string
 die2.addEventListener('click', updateDice)
 die1.addEventListener('click', updateDice)

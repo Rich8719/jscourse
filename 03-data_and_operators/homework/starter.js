@@ -31,7 +31,7 @@ console.log(q2);
  * and store it in variable q3
  */
 
-let q3 = q1.length; //should there be + 1 because it starts at 0?
+let q3 = q1.length; 
 console.log(q3);
 
 /**
@@ -40,7 +40,7 @@ console.log(q3);
  * in variable q4. Hint: How can we get the number of elements in the array?
  */
 
-let q4 = q1[q3 -1]; //why -1? Wouldn't that be 2 - 1?
+let q4 = q1[q3 -1];
 console.log(q4); 
 
 // ____________________________________________________________________________
