@@ -6,22 +6,33 @@ Card Game of War Exercise Part 1.
 
 let suits = ['hearts', 'clubs', 'spades', 'diamonds']
 let ranks = ['ace', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king']
+let deckOfCards = new Array()
 
 function createDeck() {
+    class cards {
+        constructor(suits, ranks) {
+            this.suits = suits;
+            this.ranks = ranks;
+        }
+    }
     ranks.forEach(function (ranks) {
         suits.forEach(function (suits) {
-            console.log(ranks, suits);
-            // return deckOfCards = [ranks, suits]
+            deckOfCards.push(new cards(ranks, suits))
         })
     })
 }
 
-deckOfCards = createDeck();
+function generateRandomNumber(max) {
+    return Math.floor(Math.random() * max - 1)
+}
 
 function getRandomCard() {
-    return //one random card from deckOf Cards when called
-}   
+    randomCard = deckOfCards[generateRandomNumber(deckOfCards.length)]
+    console.log(randomCard);
+}
 
+createDeck();
+getRandomCard();
 
 // Given the above suits and ranks array, write a function called
 // createDeck that will take both as parameters and return a new array
