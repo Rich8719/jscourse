@@ -20,3 +20,13 @@ Apple, Red, 0.78
 Nuts, Brown, 2.23
 
 */
+
+// import json:
+let json = require('./data.json')
+// console.log(json)
+
+json.Foods.forEach(food => {
+    // console.log(food)
+    console.log(food.name)
+    console.log(food.color)
+})
