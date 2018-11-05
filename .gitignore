@@ -2,6 +2,4 @@
 node_modules/.DS_Store
 node_modules/
 
-04*/**/*solution.js
-05*/homework/*solution.js
 07*/starter/*solution2.js
