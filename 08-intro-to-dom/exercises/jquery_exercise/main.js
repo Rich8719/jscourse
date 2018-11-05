@@ -17,6 +17,12 @@ $(document).ready(function(){
     $list.append($thingLi);
   }
   
+  function addButtons(){
+    let $button = $("<span>Complete</span>").addClass('complete-task')
+    $('.fav-thing').append($button)
+  }
+
+  addButtons()
   var $thingList = $('#fav-list');
   var $button = $('#new-thing-button');
   var $newThingInput = $('#new-thing');

@@ -34,19 +34,18 @@ window.onload = function() {
     event.preventDefault();
     var newThing = newThingInput.value;
     addToList(thingList, newThing);
-
-    // bonus version -- instead of line 36:
-
-    // if (newThing === "") {
-    //   alert("You must type in a value!");
-    // } else {
-    //   addToList(thingList, newThing);
-    //   newThingInput.value = "";
-    // }
-
-    newThingInput.value = "";
   };
 };
 
+// bonus version -- instead of line 36:
 
+// if (newThing === "") {
+//     //   alert("You must type in a value!");
+//     // } else {
+//     //   addToList(thingList, newThing);
+//     //   newThingInput.value = "";
+//     // }
 
+//     newThingInput.value = "";
+//   };
+// };
