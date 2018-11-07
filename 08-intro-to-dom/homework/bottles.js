@@ -15,19 +15,19 @@ function addLyricToList(lyric) {
 function generateLyric(i) {
     let plural = 'bottles'
     let singular = plural.replace('s', '')
-    let palceholder = ''
+    let placeholder = ''
     lyrics.forEach(function (lyric, index) {
         if (i > 0 && index == 2) {
             i = i - 1
         }
         if (i > 1 || i == 0 && i !== 99) {
-            palceholder += `${i} ${plural} ${lyric} `
+            placeholder += `${i} ${plural} ${lyric} `
         } else if (i !== 99) {
-            palceholder += `${i} ${singular} ${lyric} `
+            placeholder += `${i} ${singular} ${lyric} `
         }
     })
 
-    lyric = document.createTextNode(palceholder)
+    lyric = document.createTextNode(placeholder)
     addLyricToList(lyric)
 }
 

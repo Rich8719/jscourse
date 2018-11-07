@@ -24,12 +24,11 @@ function addToList ($list, thing) {
 function addCompleteLink ($li) {
   let $completedLink = $('<span>').html(' complete task').addClass('complete-task')
   $li.append($completedLink)
+}
 
-  // refactor this using event delegation
-  $completedLink.on('click', function (event) {
-    $li.addClass('completed')
-    $completedLink.html('')
-  })
+function addDeleteLink ($li) {
+  let $deleteLink = $('<span>').html(' delete task').addClass('delete-task')
+  $li.append($deleteLink)
 }
 
 $(document).ready(function () {
@@ -40,6 +39,7 @@ $(document).ready(function () {
 
   $things.each(function() {
     addCompleteLink($(this))
+    addDeleteLink($(this))
   })
 
   $button.on('click', function (event) {
@@ -51,5 +51,24 @@ $(document).ready(function () {
       addToList($thingList, newThing)
       $newThingInput.val('')
     }
+  })
+
+  $thingList.on('click', '.complete-task', function (event) {
+    let $thingItem = $(this).parent()
+    $thingItem.addClass('completed')
+    $(this).html('')
+  })
+
+  $thingList.on('mouseenter mouseleave', 'li', function (event) {
+    if (event.type === 'mouseenter'){
+      $(this).addClass('active')
+    } else {
+      $(this).removeClass('active')
+    }
+  })
+
+  $thingList.on('click', '.delete-task', function (event) {
+    let $thingItem = $(this).parent()
+    $thingItem.remove()
   })
 })

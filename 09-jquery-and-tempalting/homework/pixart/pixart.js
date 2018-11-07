@@ -15,6 +15,18 @@ How we we create elements in JavaScript and add them to the page?
 */
 
 // Step 1 code here
+const canvas = document.getElementById('canvas')
+
+function createPixel () {
+    const pixel = document.createElement('div')
+    pixel.className = 'square'
+    canvas.append(pixel)
+}
+
+const max = 2500
+for (let i = 0; i < max; i++) {
+    createPixel()
+}
 
 /*
 Step 2: Form Event
@@ -28,6 +40,18 @@ hints:
 */
 
 // Step 2 code here
+const brush = document.getElementsByClassName('brush')
+
+let colorInput = document.getElementById('color-field')
+const button = document.getElementById('set-color')
+
+button.addEventListener('click', function(setColor) {
+    setColor.preventDefault()
+    let currentColor = colorInput.value
+    console.log(currentColor)
+    // brush.style.background = currentColor
+})
+
 
 /*
 Step 3: Readying our Canvas

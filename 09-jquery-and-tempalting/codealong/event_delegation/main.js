@@ -24,6 +24,15 @@ $(document).ready(function () {
     addCompleteLink($(this))
   })
 
+  $thingList.on('mouseenter mouseleave', 'li', function (event) {
+    console.log(event.type)
+    if (event.type === 'mouseenter'){
+      $(this).removeClass('inactive')
+    } else {
+      $(this).siblings().addClass('inactive')
+    }
+  })
+
   $button.on('click', function (event) {
     event.preventDefault()
     let newThing = $newThingInput.val()
