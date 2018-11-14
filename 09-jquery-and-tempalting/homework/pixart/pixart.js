@@ -21,6 +21,7 @@ function createPixel () {
     const pixel = document.createElement('div')
     pixel.className = 'square'
     canvas.append(pixel)
+    pixel.addEventListener('mouseenter', changeBackgroundColor)
 }
 
 const max = 2500
@@ -40,16 +41,16 @@ hints:
 */
 
 // Step 2 code here
-const brush = document.getElementsByClassName('brush')
-
 let colorInput = document.getElementById('color-field')
+const brush = document.getElementsByClassName('brush')[0]
+let currentColor = 'Green'
+
 const button = document.getElementById('set-color')
 
 button.addEventListener('click', function(setColor) {
     setColor.preventDefault()
-    let currentColor = colorInput.value
-    console.log(currentColor)
-    // brush.style.background = currentColor
+    currentColor = colorInput.value
+    brush.style.background = currentColor
 })
 
 
@@ -63,3 +64,23 @@ Hints:
 */
 
 // Step 3 code here
+
+let dragging = false
+
+function changeBackgroundColor(event) {
+    if (dragging) {
+        event.target.style.background = currentColor
+    }
+}
+
+canvas.addEventListener('mousedown', function () {
+    dragging = true
+})
+
+canvas.addEventListener('mouseup', function () {
+    dragging = false
+})
+
+canvas.addEventListener('mouseenter', function (event) {
+    dragging = false
+})

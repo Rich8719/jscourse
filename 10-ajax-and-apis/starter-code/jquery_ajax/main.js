@@ -17,14 +17,35 @@
   let $cityField = $("#city")
   let $countryField = $("#country")
 
+  getWeather('Washington', 'USA')
+
+  function getTempButton(){
+    getElementById('$getTempButton')
+    
+  }
 
   function getWeather (city, country){
     // AJAX Logic Here. This should call updateUiSuccess on a succesfull call,
     // and updateUIError on an error.
+    $.ajax({
+      url: `${weatherUrl}${city},${country}&APPID=${apiKey}`,
+      success: function (response) {
+        console.log(response.main.temp)
+        updateUiSuccess(response.main.temp, city, country)
+      },
+      error: function () {
+        console.log('there is a problem')
+      }
+    })
   }
 
   function updateUiSuccess (temp, city, country){
     // update UI Logic Here
+    document.getElementById('temp').append(temp)
+    
+    
+    console.log(document.getElementById('city').value, document.getElementById('country').value)
+    
   }
 
   function updateUIError () {
