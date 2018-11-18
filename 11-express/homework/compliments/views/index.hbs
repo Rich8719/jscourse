@@ -1,0 +1,20 @@
+<div class = "container">
+    {{#if name}}
+        <h1 class = "name">Hello, {{name}}!</h1>
+        {{else}}
+        <h1 class = "name">Hello!</h1>
+    {{/if}}
+    <h1>{{compliment}}</h1>
+    {{#if name}}
+    <a href="/{{name}}">
+        <div class="button compliment">Next</div>
+    </a>
+    {{else}}
+    <a href="/">
+        <div class="button compliment">Next</div>
+    </a>
+    {{/if}}
+    <a href="/new-compliment">
+        <div class = "button compliment">New Compliment</div>
+    </a>
+</div>
