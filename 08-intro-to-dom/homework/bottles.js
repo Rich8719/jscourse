@@ -17,6 +17,10 @@ function generateLyric(i) {
     let singular = plural.replace('s', '')
     let placeholder = ''
     lyrics.forEach(function (lyric, index) {
+        // return i > 0 && index == 2 ? i = i - 1
+        //     : i > 1 || i == 0 && i !== 99 ? placeholder += `${i} ${plural} ${lyric} `
+        //     : i !== 99 ? placeholder += `${i} ${singular} ${lyric} `
+
         if (i > 0 && index == 2) {
             i = i - 1
         }
@@ -26,7 +30,7 @@ function generateLyric(i) {
             placeholder += `${i} ${singular} ${lyric} `
         }
     })
-
+    
     lyric = document.createTextNode(placeholder)
     addLyricToList(lyric)
 }
