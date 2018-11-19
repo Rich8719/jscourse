@@ -1,3 +1,5 @@
+const {getRandomColor} = require("../util.js")
+
 const compliments = [
     "Your instructors love you",
     "High five = ^5",
@@ -7,12 +9,12 @@ const compliments = [
 ]
 const colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
 
-//can I call multiple controllers at once so that I don't have to dupluicate stuff in them?
+
+
 const ComplimentController = {
     getCompliment: (req, res) => {
-        const color = colors[Math.floor(Math.random() * colors.length)]
+        const color = getRandomColor(colors)
         const compliment = compliments[Math.floor(Math.random() * compliments.length)]
-        console.log(compliments)
         const name = req.params.name
         res.render('index', {compliment, color, name})
     },
