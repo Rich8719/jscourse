@@ -14,6 +14,7 @@ const colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
 const ComplimentController = {
     getCompliment: (req, res) => {
         const color = getRandomColor(colors)
+        // const compliment = getRandomCompliment(compliments)
         const compliment = compliments[Math.floor(Math.random() * compliments.length)]
         const name = req.params.name
         res.render('index', {compliment, color, name})
