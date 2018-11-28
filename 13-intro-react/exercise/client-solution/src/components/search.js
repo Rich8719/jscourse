@@ -31,6 +31,7 @@ class Search extends Component {
 
   render () {
     const {hideHomeLink, buttonClass = 'normal'} = this.props
+    console.log(this.props)
     return (
       <div className="search">
         {!hideHomeLink &&
