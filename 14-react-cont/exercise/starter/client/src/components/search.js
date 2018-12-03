@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
-<<<<<<< HEAD
 import {createSearch} from "../api.js"
 import {withRouter} from 'react-router'
-=======
-import {withRouter} from 'react-router'
-import {searchGifs, createSearch} from "../api.js"
->>>>>>> 878722301f89782c4fedc51716bb3debada2966e
 import './search.css'
 
 class Search extends Component {
@@ -18,11 +13,7 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-<<<<<<< HEAD
     createSearch(this.state.searchText).then(r => {
-=======
-    createSearch(this.state.searchText).then(() => {
->>>>>>> 878722301f89782c4fedc51716bb3debada2966e
       this.props.history.push({
         pathname: `/${this.state.searchText}`
       })
