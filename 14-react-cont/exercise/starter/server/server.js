@@ -1,27 +1,27 @@
 const express = require('express')
-const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const api = require('./api.js')
 const db = require('./db.js')
 const app = express()
 
+//allows cross domain requests. server on :3000 and client on :4000. not allowed by default/
+const corsOptions = {
+  origin: 'http://localhost:3000'
+}
+
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
-app.engine('handlebars', exphbs({
-  partialsDir: 'views/partials',
-  defaultLayout: 'main'
-}))
-
-app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => {
   db.models.Search.find({})
     .limit(10)
     .sort({date: -1})
     .then(results => {
-      res.render('home', {searchResults: results})
+      res.send(results)
     })
 })
 
@@ -29,7 +29,7 @@ app.get('/:search', (req, res) => {
   const searchText = req.params.search
   api.searchGifs(searchText).then(r => {
     const data = JSON.parse(r).data
-    res.render('gif-list', {gifs: data})
+    res.send(data)
   })
 })
 
@@ -39,9 +39,9 @@ app.post('/', (req, res) => {
   db.models.Search.create({
     text: searchText,
     date: new Date()
+  }).then(result => {
+    res.send(result)
   })
-
-  res.redirect(`/${searchText}`)
 })
 
 app.listen(4000, () => {

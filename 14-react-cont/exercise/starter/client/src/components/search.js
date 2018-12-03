@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {createSearch} from "../api.js"
+import {withRouter} from 'react-router'
 import './search.css'
 
 class Search extends Component {
@@ -11,15 +13,10 @@ class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const key = 'XvPOxKdQreOgBQ9YKlivmoMHS3aQGJnH' 
-    const searchText = this.state.searchText
-    const url = `http://api.giphy.com/v1/gifs/search?api_key=${key}&q=${searchText}`
-
-    fetch(url).then(response => {
-      return response.json()
-    }).then(response => {
-      console.log(response)
-      this.props.updateParentState(response.data)
+    createSearch(this.state.searchText).then(r => {
+      this.props.history.push({
+        pathname: `/${this.state.searchText}`
+      })
     })
   }
 
@@ -45,4 +42,4 @@ class Search extends Component {
   }
 }
 
-export default Search
+export default withRouter(Search)
