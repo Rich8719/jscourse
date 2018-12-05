@@ -7,7 +7,12 @@ const searchSchema = mongoose.Schema({
 
 mongoose.model('Search', searchSchema)
 
-mongoose.connect('mongodb://ramsay:ramsay@ds119490.mlab.com:19490/js-dc-8')
-const db = mongoose.connection
+// mongoose.connect('mongodb://ramsay:ramsay@ds119490.mlab.com:19490/js-dc-8')
+// const db = mongoose.connection
 
-module.exports = db
+function makeDatabase(url){
+  mongoose.connect(url)
+  return mongoose.connection
+}
+
+module.exports = makeDatabase
