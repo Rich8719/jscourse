@@ -1,9 +1,12 @@
 //1. rewrite this to be a higher order function that only takes one argument
-const greaterThan = (x, y) => {
-  return x < y
-}
+// const greaterThan = (x, y) => {
+//   return x < y
+// }
 
-console.log(greaterThan(10, 11)) // true
+// console.log(greaterThan(10, 11)) // true 
+
+const greaterThan = x => y => x < y
+console.log(greaterThan(10, 11))
 
 //2. use a higher order function to double numbers
 const numbers = [1,2,3]
@@ -16,7 +19,9 @@ const double = numbers => {
   return doubledArray
 }
 
-const doubled = double(numbers) // [2,4,6]
+// const doubled = double(numbers) // [2,4,6]
+
+const doubled = numbers.map(num => num * 2)
 
 //3. filter underage people using a higher-order function
 const people = [
@@ -37,6 +42,10 @@ const filterUnderAgePeople = people => {
   return underagePeople
 }
 
-const underAgePeople = filterUnderAgePeople(people)
+// const underAgePeople = filterUnderAgePeople(people)
+
+const underAgePeople = people.filter(person => person.age < 21)
 
 //4. BONUS: take the array from exercise 2 and instead of doubling it, use reduce to get a sum
+
+const sum = numbers.reduce((accumulator, num) => accumulator += num, 10)

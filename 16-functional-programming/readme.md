@@ -159,7 +159,7 @@ const filterWords = words => {
   const filtered = []
   for (let i = 0; i < words.length; i++){
     const word = words[i]
-    if (word.length !== 4) filtered.push(word)
+    if (word.length == 4) filtered.push(word)
   }
 
   return filtered
@@ -184,7 +184,7 @@ We can use higher-order functions to compose functions as well.
 
 ```js
 // our HOF
-const isGreaterThan = max => n => n >= max
+const isGreaterThan = max => n => n > max
 
 const gt3 = isGreaterThan(3)
 
